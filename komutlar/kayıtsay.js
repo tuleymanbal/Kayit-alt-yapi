@@ -8,9 +8,9 @@ exports.run = async (client, message, args) => {
    //CodeArius
   let kişi = message.mentions.users.first();
   if(!kişi) {
-    let erkek = await db.get(`kayıte_${message.author.id}`) || '0'
-    let kız = await db.get(`kayıtk_${message.author.id}`) || '0'
-    let toplam = await db.get(`kayıttoplam_${message.author.id}`) || '0'
+    let erkek = await db.fetch(`kayıte_${message.author.id}`) || '0'
+    let kız = await db.fetch(`kayıtk_${message.author.id}`) || '0'
+    let toplam = await db.fetch(`kayıttoplam_${message.author.id}`) || '0'
  //CodeArius
     let kayıtlılar = new Discord.RichEmbed()
       .setColor('BLUE')
@@ -22,9 +22,9 @@ exports.run = async (client, message, args) => {
     message.channel.send(kayıtlılar)
   }
     if(kişi) { //CodeArius
-    let erkek = await db.get(`kayıte_${kişi.id}`) || '0'
-    let kız = await db.get(`kayıtk_${kişi.id}`) || '0'
-    let toplam = await db.get(`kayıttoplam_${kişi.id}`) || '0'
+    let erkek = await db.fetch(`kayıte_${kişi.id}`) || '0'
+    let kız = await db.fetch(`kayıtk_${kişi.id}`) || '0'
+    let toplam = await db.fetch(`kayıttoplam_${kişi.id}`) || '0'
     let kayıtlılar = new Discord.RichEmbed()
       .setColor('BLUE') //CodeArius
       .setDescription(`**${kişi.username} kişisinin teyit bilgisi**\n\n`)
