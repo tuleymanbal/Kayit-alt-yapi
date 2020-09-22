@@ -34,7 +34,7 @@ let toplam = await db.fetch(`kayıttoplam_${message.author.id}`) + 1 || '0'
 const emoji = client.emojis.find(emoji => emoji.name === "5_");
 
   if(kayıtlımı !== 'evet') {
-  db.add(`kayıtk_${message.author.id}`, 1)
+  db.add(`kayıte_${message.author.id}`, 1)
   db.add(`kayıttoplam_${message.author.id}` , 1) //CodeArius
   db.set(`kayıtlıkişi_${member}`, 'evet')
   db.set(`kayıtlıisim_${member}`, toplamaisim)
